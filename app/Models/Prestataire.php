@@ -7,16 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Garantie extends Model
+class Prestataire extends Model
 {
-    /** @use HasFactory<\Database\Factories\GarantieFactory> */
+    /** @use HasFactory<\Database\Factories\PrestataireFactory> */
     use HasFactory, SoftDeletes, Userstamps;
 
     protected $fillable = [
-        'libgar',
-        'libcrt',
-        'desgar',
+        'rsnpre',
+        'telpre',
+        'mailpre',
+        'adrpre',
+        'vilpre',
+        'paypre',
         'active'
     ];
-
 }

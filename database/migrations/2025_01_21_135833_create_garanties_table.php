@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('garanties', function (Blueprint $table) {
             $table->id();
             $table->string('libgar')->unique()->nullable(false)->default('');
+            $table->string('libcrt')->nullable(false)->default('null');
             $table->text('desgar')->nullable(true)->default(null);
             $table->boolean('active')->default(true);
             $table->timestamps();

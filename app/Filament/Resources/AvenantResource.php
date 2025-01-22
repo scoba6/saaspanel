@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\GroupeAvenant;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Avenant;
@@ -17,6 +18,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\AvenantResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\AvenantResource\RelationManagers;
+use Filament\Forms\Components\Select;
 
 class AvenantResource extends Resource
 {
@@ -35,9 +37,9 @@ class AvenantResource extends Resource
         return $form
             ->schema([
                 TextInput::make('ordavn')->label('ORD AVN'),
-                TextInput::make('libavn')->label('LIBELLE'),
-                TextInput::make('grpavn')->label('GROUPE AVN'),
-                RichEditor::make('txtavn')->label('TEXTE'),
+                Select::make('grpavn')->label('GROUPE AVN')->options(GroupeAvenant::class),
+                TextInput::make('libavn')->label('LIBELLE')->columnSpanFull(),
+                RichEditor::make('txtavn')->label('TEXTE')->columnSpanFull(),
                 Toggle::make('active')->label('ACTIF')->default(true)
                     ->onColor('success')
                     ->offColor('danger'),

@@ -98,6 +98,9 @@ class AdminPanelProvider extends PanelProvider
                     ->label('PARAMETRES VIE')
                     ->collapsed(true),
                 NavigationGroup::make()
+                    ->label('PARAMETRES COMPTABILITE')
+                    ->collapsed(true),
+                NavigationGroup::make()
                     ->label('ADMINISTRATION')
                     ->collapsed(true),
             ])

@@ -16,9 +16,8 @@ class ParametresIard extends Model
         'clepar', // Clef du paramètre
         'libpar', // Libellé du paramètre
         'ordpar', // Ordre numérique du paramètre
-        'txtpar', // Ordre textuel du paramètre
-        'despar', // Description du paramètre
         'valpar', // Valeur du paramètre
+        'despar', // Description du paramètre
         'active'
     ];
 }

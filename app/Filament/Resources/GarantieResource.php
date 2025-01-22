@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\GarantieResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\GarantieResource\RelationManagers;
+use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\IconColumn;
 
 class GarantieResource extends Resource
@@ -32,8 +33,8 @@ class GarantieResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('libgar')->label('LIBELLE'),
-                TextInput::make('desgar')->label('DESCRIPTION'),
+                TextInput::make('libgar')->label('LIBELLE')->columnSpanFull(),
+                RichEditor::make('desgar')->label('DESCRIPTION')->columnSpanFull(),
                 Toggle::make('active')->label('ACTIF')->default(true)
                     ->onColor('success')
                     ->offColor('danger'),

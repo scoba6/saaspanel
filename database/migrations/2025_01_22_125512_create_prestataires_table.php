@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parametres_iards', function (Blueprint $table) {
+        Schema::create('prestataires', function (Blueprint $table) {
             $table->id();
-            $table->string('clepar')->nullable(false)->default('clepar');
-            $table->string('libpar')->nullable(false)->default('libpar');
-            $table->integer('ordpar')->nullable(false)->default(0);
-            $table->string('valpar')->nullable(false)->default('valpar');
-            $table->text('despar')->nullable(true)->default(null);
+            $table->string('rsnpre')->nullable(false)->default('');
+            $table->string('telpre')->nullable(false)->default('');
+            $table->string('mailpre')->nullable(true)->default(null);
+            $table->string('adrpre')->nullable(true)->default(null);
+            $table->string('vilpre')->nullable(false)->default('');
+            $table->string('paypre')->nullable(false)->default('');
             $table->boolean('active')->nullable(false)->default(true);
             $table->timestamps();
             $table->unsignedBigInteger('created_by')->nullable();
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parametres_iards');
+        Schema::dropIfExists('prestataires');
     }
 };
